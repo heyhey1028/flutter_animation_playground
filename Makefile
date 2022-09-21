@@ -7,4 +7,4 @@ clean_sample:
 	cd ios && rm -rf Podfile.lock
 	cd ios && arch -x86_64 pod update
 	flutter clean
-	flutter pub get 
+	flutter pub get brew
