@@ -29,27 +29,11 @@ class _ControlContainerState extends State<ControlContainer> {
       child: Container(
         height: 140,
         width: double.infinity,
-        decoration: BoxDecoration(
-          color: Colors.grey[400],
-          borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(60),
-            topRight: Radius.circular(60),
-          ),
-        ),
         child: Padding(
           padding: const EdgeInsets.all(16),
           child: Column(
             // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                widget.sample.subTitle,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
-                ),
-              ),
-              const SizedBox(height: 16),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [

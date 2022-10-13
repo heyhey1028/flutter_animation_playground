@@ -12,14 +12,16 @@ class GithubButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () => launchUrl(
+    return FloatingActionButton(
+      onPressed: () => launchUrl(
         Uri.parse(url),
         mode: LaunchMode.inAppWebView,
         webViewConfiguration: const WebViewConfiguration(
           headers: <String, String>{'my_header_key': 'my_header_value'},
         ),
       ),
+      heroTag: 'github',
+      backgroundColor: Colors.purple,
       child: SvgPicture.asset(
         'assets/icons/github_icon.svg',
         semanticsLabel: 'github',

@@ -13,9 +13,10 @@ class CodeButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return IconButton(
+    return FloatingActionButton(
       onPressed: () => _CodeModal.show(context, path),
-      icon: const Icon(
+      backgroundColor: Colors.indigo,
+      child: const Icon(
         Icons.code,
         color: Colors.white,
       ),

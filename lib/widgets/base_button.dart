@@ -16,9 +16,9 @@ class BaseButton extends ConsumerWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        fixedSize: const Size(100, 18),
+        fixedSize: const Size(100, 50),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(18),
+          borderRadius: BorderRadius.circular(36),
         ),
       ),
       child: Text(text ?? ''),
