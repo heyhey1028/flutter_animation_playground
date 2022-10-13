@@ -16,7 +16,6 @@ class _WithCurveTweenState extends State<WithCurveTween>
     with SingleTickerProviderStateMixin {
   // 2. define AnimationController & Tween & Animation
   late AnimationController _controller;
-  late Animatable<Alignment> _tween;
   late Animation<Alignment> _animation;
 
   bool hasAppeared = false;
@@ -28,17 +27,17 @@ class _WithCurveTweenState extends State<WithCurveTween>
       vsync: this,
       duration: const Duration(milliseconds: 1000),
     );
-    // 4. prepare Tween
-    _tween = Tween<Alignment>(
-      begin: Alignment.topLeft,
-      end: Alignment.bottomRight,
-    ).chain(
-      CurveTween(
-        curve: Curves.fastLinearToSlowEaseIn,
+    // 4. create Animation by AnimationController x Tween
+    _animation = _controller.drive(
+      Tween<Alignment>(
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+      ).chain(
+        CurveTween(
+          curve: Curves.fastLinearToSlowEaseIn,
+        ),
       ),
     );
-    // 5. create Animation by AnimationController x Tween
-    _animation = _controller.drive(_tween);
     super.initState();
   }
 
