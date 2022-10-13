@@ -1,5 +1,6 @@
 import 'package:animation_playground/features/chain_animation/chain_animation_screen.dart';
 import 'package:animation_playground/features/curved_animation/curved_animation_screen.dart';
+import 'package:animation_playground/features/implicitly_animated_widgets/implicitly_animated_widgets_screen.dart';
 import 'package:animation_playground/features/multiple_effects/multiple_effects_screen.dart';
 import 'package:animation_playground/features/staggered_animation/staggered_animation_screen.dart';
 import 'package:flutter/material.dart';
@@ -68,6 +69,12 @@ class MainDrawer extends StatelessWidget {
               icon: const Icon(Icons.bar_chart),
               title: 'STAGGERED ANIMATION',
               navigateTo: const StaggeredAnimationScreen(),
+            ),
+            DrawerTile(
+              color: Colors.teal[100],
+              icon: const Icon(Icons.rocket),
+              title: 'IMPLICITLY ANIMATED WIDGETS',
+              navigateTo: const ImplicitlyAnimatedWidgetsScreen(),
             ),
           ],
         ),
