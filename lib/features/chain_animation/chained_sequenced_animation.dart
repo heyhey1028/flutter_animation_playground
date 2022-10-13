@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:animation_playground/constants/dash_bird.dart';
+import 'package:animation_playground/widgets/animation_area.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants/sample_page.dart';
@@ -44,7 +45,7 @@ class _ChainedSequencedAnimationSampleState
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        AnimatedDashBird(controller: _controller),
+        AnimationArea(child: AnimatedDashBird(controller: _controller)),
         ControlContainer(
           controller: _controller,
           sample: SamplePage.chainedSequencedAnimation,

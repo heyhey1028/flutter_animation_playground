@@ -1,4 +1,5 @@
 import 'package:animation_playground/constants/dash_bird.dart';
+import 'package:animation_playground/widgets/animation_area.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants/sample_page.dart';
@@ -39,7 +40,7 @@ class _StaggeredAnimationSampleState extends State<StaggeredAnimationSample>
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        AnimatedDashBirds(controller: _controller),
+        AnimationArea(child: AnimatedDashBirds(controller: _controller)),
         ControlContainer(
           controller: _controller,
           sample: SamplePage.staggeredAnimation,
@@ -133,7 +134,6 @@ class AnimatedDashBirds extends AnimatedWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const SizedBox(height: 120),
           Transform.translate(
             offset: birdOneAnimation.value,
             child: Image.asset(

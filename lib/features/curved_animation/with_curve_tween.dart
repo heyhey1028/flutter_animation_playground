@@ -1,4 +1,5 @@
 import 'package:animation_playground/constants/dash_bird.dart';
+import 'package:animation_playground/widgets/animation_area.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants/sample_page.dart';
@@ -51,7 +52,7 @@ class _WithCurveTweenState extends State<WithCurveTween>
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        AnimatedDashBird(animation: _animation),
+        AnimationArea(child: AnimatedDashBird(animation: _animation)),
         ControlContainer(
           controller: _controller,
           sample: SamplePage.curveWithCurveTween,

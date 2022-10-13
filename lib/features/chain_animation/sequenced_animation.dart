@@ -1,4 +1,5 @@
 import 'package:animation_playground/constants/dash_bird.dart';
+import 'package:animation_playground/widgets/animation_area.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants/sample_page.dart';
@@ -110,19 +111,21 @@ class _SequencedAnimationSampleState extends State<SequencedAnimationSample>
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        AnimatedBuilder(
-          // 6. merging animations to be apply multiple effects to within AnimatedBuilder
-          animation: _alignAnimation,
-          builder: (context, _) {
-            return Align(
-              alignment: _alignAnimation.value,
-              child: Image.asset(
-                DashBird.pencil.path,
-                width: 200,
-                height: 200,
-              ),
-            );
-          },
+        AnimationArea(
+          child: AnimatedBuilder(
+            // 6. merging animations to be apply multiple effects to within AnimatedBuilder
+            animation: _alignAnimation,
+            builder: (context, _) {
+              return Align(
+                alignment: _alignAnimation.value,
+                child: Image.asset(
+                  DashBird.pencil.path,
+                  width: 200,
+                  height: 200,
+                ),
+              );
+            },
+          ),
         ),
         ControlContainer(
           controller: _controller,
