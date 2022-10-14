@@ -112,6 +112,7 @@ class _SequencedAnimationSampleState extends State<SequencedAnimationSample>
     return Stack(
       children: [
         AnimationArea(
+          title: SamplePage.sequencedAnimation.title,
           child: AnimatedBuilder(
             // 6. merging animations to be apply multiple effects to within AnimatedBuilder
             animation: _alignAnimation,

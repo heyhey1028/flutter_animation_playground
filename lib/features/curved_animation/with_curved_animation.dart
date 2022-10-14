@@ -52,7 +52,10 @@ class _WithCurvedAnimationState extends State<WithCurvedAnimation>
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        AnimationArea(child: AnimatedDashBird(animation: _animation)),
+        AnimationArea(
+          title: SamplePage.curveWithCurvedAnimation.title,
+          child: AnimatedDashBird(animation: _animation),
+        ),
         ControlContainer(
           controller: _controller,
           sample: SamplePage.curveWithCurvedAnimation,

@@ -1,4 +1,5 @@
 import 'package:animation_playground/constants/dash_bird.dart';
+import 'package:animation_playground/widgets/animation_area.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants/sample_page.dart';
@@ -46,20 +47,23 @@ class _BasicWithAnimatedBuilderState extends State<BasicWithAnimatedBuilder>
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        AnimatedBuilder(
-          animation: _animation,
-          builder: (context, _) {
-            return Center(
-              child: Transform.translate(
-                offset: _animation.value,
-                child: Image.asset(
-                  DashBird.pc.path,
-                  width: 200,
-                  height: 200,
+        AnimationArea(
+          title: SamplePage.basicWithAniamatedBuilder.title,
+          child: AnimatedBuilder(
+            animation: _animation,
+            builder: (context, _) {
+              return Center(
+                child: Transform.translate(
+                  offset: _animation.value,
+                  child: Image.asset(
+                    DashBird.pc.path,
+                    width: 200,
+                    height: 200,
+                  ),
                 ),
-              ),
-            );
-          },
+              );
+            },
+          ),
         ),
         ControlContainer(
           controller: _controller,

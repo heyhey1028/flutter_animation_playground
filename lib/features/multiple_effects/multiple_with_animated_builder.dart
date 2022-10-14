@@ -1,4 +1,5 @@
 import 'package:animation_playground/constants/dash_bird.dart';
+import 'package:animation_playground/widgets/animation_area.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants/sample_page.dart';
@@ -52,27 +53,30 @@ class _MultipleWithAnimatedBuilderState
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        AnimatedBuilder(
-          // 6. merging animations to be apply multiple effects to within AnimatedBuilder
-          animation: Listenable.merge([
-            _offsetAnimation,
-            _opacityAnimation,
-          ]),
-          builder: (context, _) {
-            return Center(
-              child: Opacity(
-                opacity: _opacityAnimation.value,
-                child: Transform.translate(
-                  offset: _offsetAnimation.value,
-                  child: Image.asset(
-                    DashBird.power.path,
-                    width: 400,
-                    height: 400,
+        AnimationArea(
+          title: SamplePage.multipleWithAnimatedBuilder.title,
+          child: AnimatedBuilder(
+            // 6. merging animations to be apply multiple effects to within AnimatedBuilder
+            animation: Listenable.merge([
+              _offsetAnimation,
+              _opacityAnimation,
+            ]),
+            builder: (context, _) {
+              return Center(
+                child: Opacity(
+                  opacity: _opacityAnimation.value,
+                  child: Transform.translate(
+                    offset: _offsetAnimation.value,
+                    child: Image.asset(
+                      DashBird.power.path,
+                      width: 400,
+                      height: 400,
+                    ),
                   ),
                 ),
-              ),
-            );
-          },
+              );
+            },
+          ),
         ),
         ControlContainer(
           controller: _controller,

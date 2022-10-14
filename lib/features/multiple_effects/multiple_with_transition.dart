@@ -1,4 +1,5 @@
 import 'package:animation_playground/constants/dash_bird.dart';
+import 'package:animation_playground/widgets/animation_area.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants/sample_page.dart';
@@ -50,13 +51,16 @@ class _MultipleWithTransitionState extends State<MultipleWithTransition>
     return Stack(
       children: [
         // 6. nest transition widget to apply multiple effects
-        ScaleTransition(
-          scale: _scaleAnimation,
-          child: FadeTransition(
-            opacity: _fadeAnimation,
-            child: Center(
-              child: Image.asset(
-                DashBird.power.path,
+        AnimationArea(
+          title: SamplePage.multipleWithTransition.title,
+          child: ScaleTransition(
+            scale: _scaleAnimation,
+            child: FadeTransition(
+              opacity: _fadeAnimation,
+              child: Center(
+                child: Image.asset(
+                  DashBird.power.path,
+                ),
               ),
             ),
           ),

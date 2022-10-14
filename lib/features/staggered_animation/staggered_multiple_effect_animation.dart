@@ -43,7 +43,10 @@ class _StaggeredMultipleEffectAnimationSampleState
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        AnimationArea(child: AnimatedDashBirds(controller: _controller)),
+        AnimationArea(
+          title: SamplePage.staggeredMultipleEffectAnimation.title,
+          child: AnimatedDashBirds(controller: _controller),
+        ),
         ControlContainer(
           controller: _controller,
           sample: SamplePage.staggeredMultipleEffectAnimation,

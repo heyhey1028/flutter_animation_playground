@@ -41,7 +41,10 @@ class _StaggeredSequencedAnimationSampleState
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        AnimationArea(child: AnimatedDashBirds(controller: _controller)),
+        AnimationArea(
+          title: SamplePage.staggeredSequencedAnimation.title,
+          child: AnimatedDashBirds(controller: _controller),
+        ),
         ControlContainer(
           controller: _controller,
           sample: SamplePage.staggeredSequencedAnimation,

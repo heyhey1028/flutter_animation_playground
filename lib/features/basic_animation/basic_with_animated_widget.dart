@@ -1,4 +1,5 @@
 import 'package:animation_playground/constants/dash_bird.dart';
+import 'package:animation_playground/widgets/animation_area.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants/sample_page.dart';
@@ -46,7 +47,10 @@ class _BasicWithAnimatedWidgetState extends State<BasicWithAnimatedWidget>
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        AnimatedDashBird(animation: _animation),
+        AnimationArea(
+          title: SamplePage.basicWithAnimatedWidget.title,
+          child: AnimatedDashBird(animation: _animation),
+        ),
         ControlContainer(
           controller: _controller,
           sample: SamplePage.basicWithAnimatedWidget,

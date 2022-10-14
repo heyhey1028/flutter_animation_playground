@@ -45,7 +45,10 @@ class _ChainedSequencedAnimationSampleState
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        AnimationArea(child: AnimatedDashBird(controller: _controller)),
+        AnimationArea(
+          title: SamplePage.chainedSequencedAnimation.title,
+          child: AnimatedDashBird(controller: _controller),
+        ),
         ControlContainer(
           controller: _controller,
           sample: SamplePage.chainedSequencedAnimation,

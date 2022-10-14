@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:animation_playground/constants/dash_bird.dart';
+import 'package:animation_playground/widgets/animation_area.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants/sample_page.dart';
@@ -52,9 +53,12 @@ class _MultipleWithAnimatedWidgetState extends State<MultipleWithAnimatedWidget>
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        AnimatedDashBird(
-          opacityAnimation: _opacityAnimation,
-          rotateAnimation: _rotateAnimation,
+        AnimationArea(
+          title: SamplePage.multipleWithAnimatedWidget.title,
+          child: AnimatedDashBird(
+            opacityAnimation: _opacityAnimation,
+            rotateAnimation: _rotateAnimation,
+          ),
         ),
         ControlContainer(
           controller: _controller,

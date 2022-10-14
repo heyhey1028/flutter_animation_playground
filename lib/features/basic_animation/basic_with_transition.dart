@@ -1,4 +1,5 @@
 import 'package:animation_playground/constants/dash_bird.dart';
+import 'package:animation_playground/widgets/animation_area.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants/sample_page.dart';
@@ -45,13 +46,16 @@ class _BasicWithTransitionState extends State<BasicWithTransition>
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        SlideTransition(
-          position: _animation,
-          child: Center(
-            child: Image.asset(
-              DashBird.pc.path,
-              width: 200,
-              height: 200,
+        AnimationArea(
+          title: SamplePage.basicWithTransition.title,
+          child: SlideTransition(
+            position: _animation,
+            child: Center(
+              child: Image.asset(
+                DashBird.pc.path,
+                width: 200,
+                height: 200,
+              ),
             ),
           ),
         ),

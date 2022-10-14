@@ -1,5 +1,8 @@
 import 'package:animation_playground/constants/dash_bird.dart';
+import 'package:animation_playground/constants/sample_page.dart';
+import 'package:animation_playground/widgets/animation_area.dart';
 import 'package:animation_playground/widgets/base_button.dart';
+import 'package:animation_playground/widgets/control_container.dart';
 import 'package:flutter/material.dart';
 
 class MultipleWithImplicitAnimation extends StatefulWidget {
@@ -23,13 +26,16 @@ class _MultipleWithImplicitAnimationState
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Center(
-          child: AnimatedScale(
-            scale: scale,
-            duration: const Duration(milliseconds: 800),
-            child: AnimatedSwitcher(
+        AnimationArea(
+          title: SamplePage.multipleWithImplicitAnimation.title,
+          child: Center(
+            child: AnimatedScale(
+              scale: scale,
               duration: const Duration(milliseconds: 800),
-              child: image,
+              child: AnimatedSwitcher(
+                duration: const Duration(milliseconds: 800),
+                child: image,
+              ),
             ),
           ),
         ),

@@ -52,7 +52,10 @@ class _WithCurveTweenState extends State<WithCurveTween>
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        AnimationArea(child: AnimatedDashBird(animation: _animation)),
+        AnimationArea(
+          title: SamplePage.curveWithCurveTween.title,
+          child: AnimatedDashBird(animation: _animation),
+        ),
         ControlContainer(
           controller: _controller,
           sample: SamplePage.curveWithCurveTween,
